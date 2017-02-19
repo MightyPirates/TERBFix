@@ -29,7 +29,7 @@ public class ClassTransformerTERBFix implements IClassTransformer {
                 "", // Patched in by Forge, never obfuscated.
                 "",
                 "()Lnet/minecraft/util/math/AxisAlignedBB;",
-                "()Lbbf;");
+                "()Lbby;");
 
         final ClassReader classReader = new ClassReader(basicClass);
         final ClassNode classNode = new ClassNode();
@@ -55,12 +55,12 @@ public class ClassTransformerTERBFix implements IClassTransformer {
     private boolean transformGetRenderBoundingBox(final MethodNode methodNode) {
         final MethodInsnInfo patchAfter = new MethodInsnInfo(
                 "net/minecraft/block/state/IBlockState",
-                "ard",
+                "ars",
                 "getCollisionBoundingBox",
                 "func_185890_d",
                 "d",
                 "(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/util/math/AxisAlignedBB;",
-                "(Laht;Lcl;)Lbbf;");
+                "(Laid;Lcm;)Lbby;");
 
         for (AbstractInsnNode insn = methodNode.instructions.getFirst(); insn != null; insn = insn.getNext()) {
             if (insn.getType() != AbstractInsnNode.METHOD_INSN) {
@@ -101,13 +101,13 @@ public class ClassTransformerTERBFix implements IClassTransformer {
                     "func_72321_a",
                     "a",
                     "(DDD)Lnet/minecraft/util/math/AxisAlignedBB;",
-                    "(DDD)Lbbf;");
+                    "(DDD)Lbby;");
             final MethodInfo offset = new MethodInfo(
                     "offset",
                     "func_186670_a",
                     "a",
                     "(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/util/math/AxisAlignedBB;",
-                    "(Lcl;)Lbbf;");
+                    "(Lcm;)Lbby;");
             return transformMethod((MethodInsnNode) head, addCoord, offset);
         }
 

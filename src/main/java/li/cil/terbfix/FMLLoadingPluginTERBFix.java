@@ -4,7 +4,7 @@ import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
 
 import java.util.Map;
 
-@IFMLLoadingPlugin.MCVersion("1.9.4")
+@IFMLLoadingPlugin.MCVersion("1.10.2")
 public class FMLLoadingPluginTERBFix implements IFMLLoadingPlugin {
     private static final String[] asmTransformerClass = {
             "li.cil.terbfix.ClassTransformerTERBFix"
