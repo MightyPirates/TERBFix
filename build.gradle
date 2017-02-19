@@ -76,7 +76,7 @@ processResources {
 
 jar {
     manifest {
-        attributes FMLCorePlugin: "li.cil.terbfix.launch.TransformerLoader"
+        attributes FMLCorePlugin: "li.cil.terbfix.FMLLoadingPluginTERBFix"
         attributes FMLCorePluginContainsFMLMod: "true"
     }
 }
